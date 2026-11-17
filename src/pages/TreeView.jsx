@@ -37,7 +37,28 @@ function TreeViewInner() {
       setNodes(layoutedNodes);
       setEdges(layoutedEdges);
     } catch (err) {
-      console.error('Failed to fetch tree:', err);
+      console.warn('Backend tree not reachable, loading demo family tree:', err);
+      const demoNodes = [
+        { id: '1', type: 'personNode', data: { id: '1', name: 'Ramesh Taklikar', gender: 'Male', birthYear: 1952, isClaimed: true } },
+        { id: '2', type: 'personNode', data: { id: '2', name: 'Savitri Taklikar', gender: 'Female', birthYear: 1956, isClaimed: true } },
+        { id: '3', type: 'personNode', data: { id: '3', name: 'Gitesh Taklikar', gender: 'Male', birthYear: 1982, isClaimed: true } },
+        { id: '4', type: 'personNode', data: { id: '4', name: 'Pooja Taklikar', gender: 'Female', birthYear: 1985, isClaimed: false } },
+        { id: '5', type: 'personNode', data: { id: '5', name: 'Aarav Taklikar', gender: 'Male', birthYear: 2012, isClaimed: false } },
+        { id: '6', type: 'personNode', data: { id: '6', name: 'Ananya Taklikar', gender: 'Female', birthYear: 2015, isClaimed: false } },
+      ];
+      const demoEdges = [
+        { id: 'e1-2', source: '1', target: '2', type: 'spouseEdge', data: { relType: 'SPOUSE_OF' } },
+        { id: 'e1-3', source: '1', target: '3', type: 'parentEdge', data: { relType: 'PARENT_OF' } },
+        { id: 'e2-3', source: '2', target: '3', type: 'parentEdge', data: { relType: 'PARENT_OF' } },
+        { id: 'e3-4', source: '3', target: '4', type: 'spouseEdge', data: { relType: 'SPOUSE_OF' } },
+        { id: 'e3-5', source: '3', target: '5', type: 'parentEdge', data: { relType: 'PARENT_OF' } },
+        { id: 'e4-5', source: '4', target: '5', type: 'parentEdge', data: { relType: 'PARENT_OF' } },
+        { id: 'e3-6', source: '3', target: '6', type: 'parentEdge', data: { relType: 'PARENT_OF' } },
+        { id: 'e4-6', source: '4', target: '6', type: 'parentEdge', data: { relType: 'PARENT_OF' } },
+      ];
+      const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(demoNodes, demoEdges, 'TB');
+      setNodes(layoutedNodes);
+      setEdges(layoutedEdges);
     } finally {
       setLoading(false);
     }

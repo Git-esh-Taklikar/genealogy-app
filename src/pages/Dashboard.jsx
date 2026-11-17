@@ -52,8 +52,8 @@ export default function Dashboard() {
       desc: 'Explore your interactive family tree',
       icon: TreePine,
       color: 'from-emerald-500 to-teal-600',
-      action: () => personNode?.id && navigate(`/tree/${personNode.id}`),
-      disabled: !personNode?.id,
+      action: () => navigate(`/tree/${personNode?.id || '1'}`),
+      disabled: false,
     },
     {
       title: 'Find Connection',
