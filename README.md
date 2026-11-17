@@ -32,6 +32,10 @@ A modern, responsive web application for building, visualizing, and managing int
 | Technology | Purpose |
 | :--- | :--- |
 | **[React 18](https://react.dev/)** | Frontend user interface framework |
+| **[Vite](https://vitejs.dev/)** | Next-generation frontend tooling and bundler |
+| **[React Flow (@xyflow/react)](https://reactflow.dev/)** | Interactive graph and family tree node-based canvas |
+| **[Tailwind CSS](https://tailwindcss.com/)** | Utility-first styling framework |
+| **[Framer Motion](https://www.framer.com/motion/)** | Smooth UI animations and transitions |
 | **[Firebase 10](https://firebase.google.com/)** | Authentication & Cloud Firestore database |
 | **[Lucide React](https://lucide.dev/)** | Lightweight and customizable iconography |
 | **[GitHub Pages](https://pages.github.com/)** | Production hosting and distribution |
