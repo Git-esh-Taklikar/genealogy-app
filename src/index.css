@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Custom Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
+  /* Focus visible ring for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+/* ===== Custom Scrollbar ===== */
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-warm-300 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-warm-400;
+  }
+}
+
+/* ===== React Flow Custom Styles ===== */
+.react-flow__node {
+  cursor: pointer;
+}
+
+.react-flow__node.selected .person-card {
+  @apply ring-2 ring-brand-500 shadow-lg;
+  box-shadow: 0 0 12px 2px rgba(245, 158, 11, 0.3);
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: react-flow-edge-dash 1s linear infinite;
+}
+
+@keyframes react-flow-edge-dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+.react-flow__minimap {
+  @apply rounded-lg shadow-md border border-warm-200;
+}
+
+.react-flow__controls {
+  @apply rounded-lg shadow-md border border-warm-200;
+}
+
+.react-flow__controls-button {
+  @apply border-b border-warm-200;
+}
+
+.react-flow__background {
+  background-color: #fdf8f0;
+}
+
+/* ===== Pathfinder Glow Animation ===== */
+.path-glow-edge .react-flow__edge-path {
+  stroke: #f59e0b;
+  stroke-width: 4;
+  stroke-dasharray: 10;
+  animation: glow-flow 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.8));
+}
+
+@keyframes glow-flow {
+  0% {
+    stroke-dashoffset: 20;
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 1));
+  }
+  100% {
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+}
+
+.path-node-pulse {
+  animation: node-pulse 1s ease-out;
+}
+
+@keyframes node-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 8px rgba(245, 158, 11, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+/* ===== Kiosk Mode Styles ===== */
+.kiosk-mode {
+  @apply bg-accent-950 text-white;
+  font-size: 1.25rem;
+}
+
+.kiosk-mode .person-card {
+  @apply p-6;
+  min-width: 280px;
+  min-height: 160px;
+}
+
+.kiosk-mode .kiosk-btn {
+  @apply min-w-[64px] min-h-[64px] text-xl font-semibold;
+}
+
+.kiosk-mode .react-flow__background {
+  background-color: #1e1b4b;
+}
+
+/* ===== Confetti Particles ===== */
+.confetti-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confetti-fall 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(200px) rotate(720deg) scale(0.3);
+  }
+}
+
+/* ===== Drag and Drop Zone ===== */
+.drop-zone {
+  @apply border-2 border-dashed border-warm-300 rounded-xl p-8 text-center transition-colors;
+}
+
+.drop-zone.active {
+  @apply border-brand-500 bg-brand-50;
+}
+
+/* ===== Skeleton Loading ===== */
+.skeleton {
+  @apply bg-warm-200 rounded;
+  background: linear-gradient(90deg, #edddcc 25%, #f5ebe0 50%, #edddcc 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* ===== Virtual Keyboard ===== */
+.virtual-key {
+  @apply min-w-[64px] min-h-[64px] rounded-lg bg-warm-100 text-gray-800 font-semibold text-lg
+         flex items-center justify-center active:bg-brand-200 transition-colors select-none;
+  touch-action: manipulation;
+}
+
+.virtual-key:active {
+  transform: scale(0.95);
+}
+
+/* ===== Toast Notifications ===== */
+.toast-container {
+  @apply fixed bottom-4 right-4 z-50 flex flex-col gap-2;
+}
+
+.toast {
+  @apply px-4 py-3 rounded-lg shadow-lg text-white text-sm font-medium animate-fade-up;
+}
+
+.toast-success {
+  @apply bg-green-600;
+}
+
+.toast-error {
+  @apply bg-red-600;
+}
+
+.toast-info {
+  @apply bg-accent-700;
+}
+

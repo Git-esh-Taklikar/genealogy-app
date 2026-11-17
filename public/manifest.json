@@ -1,0 +1,17 @@
+{
+  "name": "Genealogy - Family Tree Explorer",
+  "short_name": "Genealogy",
+  "description": "Map your multi-generational family tree and discover connections at family gatherings",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1b4b",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
