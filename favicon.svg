@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="trunk" x1="32" y1="58" x2="32" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="canopy" x1="32" y1="6" x2="32" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <!-- Trunk -->
+  <path d="M28 58 L28 34 Q28 28 32 26 Q36 28 36 34 L36 58 Z" fill="url(#trunk)"/>
+  <!-- Left branch -->
+  <path d="M30 36 Q22 30 16 24" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Right branch -->
+  <path d="M34 36 Q42 30 48 24" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Canopy circles (people nodes) -->
+  <circle cx="32" cy="14" r="8" fill="url(#canopy)" stroke="#1e1b4b" stroke-width="1.5"/>
+  <circle cx="18" cy="20" r="6" fill="url(#canopy)" stroke="#1e1b4b" stroke-width="1.5"/>
+  <circle cx="46" cy="20" r="6" fill="url(#canopy)" stroke="#1e1b4b" stroke-width="1.5"/>
+  <circle cx="10" cy="30" r="4.5" fill="#fcd34d" stroke="#1e1b4b" stroke-width="1"/>
+  <circle cx="24" cy="28" r="4.5" fill="#fcd34d" stroke="#1e1b4b" stroke-width="1"/>
+  <circle cx="40" cy="28" r="4.5" fill="#fcd34d" stroke="#1e1b4b" stroke-width="1"/>
+  <circle cx="54" cy="30" r="4.5" fill="#fcd34d" stroke="#1e1b4b" stroke-width="1"/>
+  <!-- Connection lines -->
+  <line x1="32" y1="22" x2="18" y2="20" stroke="#312e81" stroke-width="1" opacity="0.5"/>
+  <line x1="32" y1="22" x2="46" y2="20" stroke="#312e81" stroke-width="1" opacity="0.5"/>
+  <line x1="18" y1="26" x2="10" y2="30" stroke="#312e81" stroke-width="0.8" opacity="0.4"/>
+  <line x1="18" y1="26" x2="24" y2="28" stroke="#312e81" stroke-width="0.8" opacity="0.4"/>
+  <line x1="46" y1="26" x2="40" y2="28" stroke="#312e81" stroke-width="0.8" opacity="0.4"/>
+  <line x1="46" y1="26" x2="54" y2="30" stroke="#312e81" stroke-width="0.8" opacity="0.4"/>
+  <!-- Roots -->
+  <path d="M28 58 Q24 62 18 62" stroke="#92400e" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M36 58 Q40 62 46 62" stroke="#92400e" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M32 58 Q32 63 32 64" stroke="#92400e" stroke-width="2" stroke-linecap="round" fill="none"/>
+</svg>
+
